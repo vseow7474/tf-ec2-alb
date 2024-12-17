@@ -1,6 +1,6 @@
 resource "random_integer" "subnet_id_selection" {
   min = 0
-  max = length(var.public_subnet_ids)
+  max = length(var.public_subnet_ids) -1
   keepers = {
     subnet_ids = join(",", var.public_subnet_ids)
   }
